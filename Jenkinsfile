@@ -35,7 +35,7 @@ pipeline {
              dir('C:\\Users\\Miguel\\Documents\\repositoriosDevOps\\fork_def\\ejemplo-maven')
              {
                 bat 'start mvnw.cmd spring-boot:run'
-                
+                sleep 20
              }
 
           }
