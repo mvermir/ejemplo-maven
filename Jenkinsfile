@@ -31,6 +31,12 @@ pipeline {
                 }
             }
         }
+	 stage('uploadNexus')
+        {
+            steps { 
+               bat 'nexusPublisher nexusInstanceId: 'nexus-dev2', nexusRepositoryId: 'test-nexus', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: 'jar', filePath: 'C:\\Users\\Miguel\\Documents\\repositoriosDevOps\\fork_def\\ejemplo-maven\\build\\DevOpsUsach2020-0.0.1.jar']], mavenCoordinate: [artifactId: 'DevOpsUsach2020', groupId: 'com.devopsusach2020', packaging: 'jar', version: '0.0.1']]], tagName: '0.0.1''
+            }
+       }
 	    
 
     } //fin stages
