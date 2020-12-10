@@ -4,7 +4,7 @@ pipeline {
     stages {
            stage('Compile') {
             steps {
-            dir('C:\\Users\\Miguel\\Desktop\\ejemplo-maven-main')
+            dir('C:\\Users\\Miguel\\Documents\\repositoriosDevOps\\fork_def\\ejemplo-maven')
              {
                 bat './mvnw.cmd clean compile -e'
              }
@@ -14,7 +14,7 @@ pipeline {
 
             stage('Unit') {
             steps {
-            dir('C:\\Users\\Miguel\\Desktop\\ejemplo-maven-main')
+            dir('C:\\Users\\Miguel\\Documents\\repositoriosDevOps\\fork_def\\ejemplo-maven')
             {
                 bat './mvnw.cmd clean test -e'
             }
@@ -23,7 +23,7 @@ pipeline {
 
             stage('Jar') {
             steps {
-             dir('C:\\Users\\Miguel\\Desktop\\ejemplo-maven-main')
+             dir('C:\\Users\\Miguel\\Documents\\repositoriosDevOps\\fork_def\\ejemplo-maven')
              {
                 bat './mvnw.cmd clean package -e'
             }
@@ -32,7 +32,7 @@ pipeline {
 
              stage('Run') {
             steps {
-             dir('C:\\Users\\Miguel\\Desktop\\ejemplo-maven-main')
+             dir('C:\\Users\\Miguel\\Documents\\repositoriosDevOps\\fork_def\\ejemplo-maven')
              {
                 bat 'start mvnw.cmd spring-boot:run'
                 
@@ -43,7 +43,7 @@ pipeline {
 
         stage('Test') {
             steps {
-             dir('C:\\Users\\Miguel\\Desktop\\ejemplo-maven-main')
+             dir('C:\\Users\\Miguel\\Documents\\repositoriosDevOps\\fork_def\\ejemplo-maven')
              {
                 sleep 20 
                bat 'curl http://localhost:8081/rest/mscovid/test?msg=testing'
