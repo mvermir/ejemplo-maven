@@ -2,9 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage() 
+        stage(env.Tarea = 'Compile') 
 		{
-			env.Tarea = 'Compile'
 			figlet env.Tarea
             steps {
                 bat './mvnw.cmd clean compile -e'
