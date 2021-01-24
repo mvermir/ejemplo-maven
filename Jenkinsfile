@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage(env.Tarea = 'Compile') 
 		{
-			figlet env.Tarea
             steps {
                 bat './mvnw.cmd clean compile -e'
             }
